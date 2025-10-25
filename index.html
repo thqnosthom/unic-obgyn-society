@@ -193,14 +193,30 @@
       </div>
     </section>
 
-    <section id="join" class="contact">
-      <div class="container">
-        <h2>Join us</h2>
-        <p>Membership is open to all students. Fill the form and we’ll get back to you with next steps.</p>
-        https://formspree.io/f/mblpjrwb
-        <p style="margin-top:10px;font-size:14px;color:var(--muted)">Prefer a link? Use our <a href="#" style="text-decoration:underline">Google Form</a> (replace this link).</p>
-      </div>
-    </section>
+   <section id="join" class="contact">
+  <div class="container">
+    <h2>Join us</h2>
+    <p>Membership is open to all students. Fill the form and we’ll get back to you with next steps.</p>
+
+    <form action="https://formspree.io/f/mblpjrwb" method="POST">
+      <input required name="name" placeholder="Full name" />
+      <input required name="email" type="email" placeholder="Email" />
+      <textarea required name="message" rows="4" placeholder="Your message"></textarea>
+
+      <!-- Optional extras -->
+      <input type="hidden" name="_subject" value="New message from UNIC O&G website">
+      <input type="text" name="_gotcha" style="display:none"> <!-- honeypot -->
+      <input type="hidden" name="_redirect" value="https://thqnosthom.github.io/unic-obgyn-society/?sent=1#join">
+
+      <button class="btn" type="submit">Send</button>
+    </form>
+
+    <p style="margin-top:10px;font-size:14px;color:var(--muted)">
+      Prefer a link? <a href="https://formspree.io/f/mblpjrwb" target="_blank" rel="noopener" style="text-decoration:underline">Open the form directly</a>.
+    </p>
+  </div>
+</section>
+
   </main>
 
   <footer>
