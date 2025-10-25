@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNIC Obstetrics & Gynaecology Society</title>
+  <meta name="description" content="Student‑run society promoting education, research and mentorship in Obstetrics & Gynaecology at UNIC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1020;          /* deep indigo */
+      --surface:#111737;     /* card surface */
+      --text:#eef2ff;        /* light text */
+      --muted:#a7b3d5;       /* muted text */
+      --accent:#6ee7b7;      /* mint */
+      --accent-2:#93c5fd;    /* sky */
+      --ring: rgba(147, 197, 253, .4);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(150deg,#0b1020 0%,#0f1733 60%,#0a0f24 100%);color:var(--text)}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:20;backdrop-filter:saturate(180%) blur(8px);
+      background:linear-gradient(180deg,rgba(11,16,32,.8),rgba(11,16,32,.3));
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+    .brand .logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(circle at 30% 25%, #93c5fd, #6ee7b7 60%, transparent 61%),linear-gradient(135deg,#6ee7b7,#60a5fa);box-shadow:var(--shadow)}
+    .nav a{opacity:.9;text-decoration:none;margin-left:18px;font-weight:500}
+    .cta{padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,#6ee7b7,#93c5fd);color:#0b1020;font-weight:700;box-shadow:var(--shadow)}
+
+    .hero{padding:80px 0 40px}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(147,197,253,.12);border:1px solid rgba(147,197,253,.25);padding:8px 12px;border-radius:999px;color:var(--accent-2)}
+    h1{font-size:clamp(28px,5vw,52px);line-height:1.05;margin:14px 0 10px}
+    .lead{color:var(--muted);font-size:clamp(16px,2.2vw,20px)}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px}
+    .hero-card .inner{border-radius:16px;overflow:hidden;background:linear-gradient(135deg,rgba(147,197,253,.25),rgba(110,231,183,.18));box-shadow:var(--shadow)}
+    .hero-card img{width:100%;display:block;filter:saturate(1.05) contrast(1.02)}
+
+    section{padding:56px 0;border-top:1px solid rgba(255,255,255,.06)}
+    h2{font-size:clamp(22px,3.2vw,34px);margin:0 0 18px}
+    p{color:var(--muted);line-height:1.7}
+    .grid{display:grid;gap:20px}
+    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .tag{display:inline-block;font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);margin-right:8px;color:var(--accent)}
+
+    .events .item{display:flex;gap:16px;padding:16px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08)}
+    .events .date{min-width:86px;text-align:center;background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px}
+    .events .date .d{font-size:24px;font-weight:800}
+    .events .date .m{font-size:12px;color:var(--muted)}
+
+    .team{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .person{display:flex;gap:14px;align-items:center}
+    .avatar{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#93c5fd,#6ee7b7);display:grid;place-items:center;font-weight:800;color:#0b1020}
+
+    .contact form{display:grid;gap:12px;max-width:560px}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--text);outline:none}
+    input:focus, textarea:focus{box-shadow:0 0 0 4px var(--ring)}
+    button{cursor:pointer}
+    .btn{border:0;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#6ee7b7,#93c5fd);color:#0b1020;font-weight:800;box-shadow:var(--shadow)}
+
+    footer{padding:32px 0;color:var(--muted);text-align:center}
+    .links{display:flex;gap:14px;justify-content:center}
+    .links a{opacity:.9;text-decoration:none;border:1px solid rgba(255,255,255,.12);padding:8px 12px;border-radius:999px}
+
+    @media (max-width: 900px){
+      .hero{padding:52px 0 24px}
+      .hero-grid{grid-template-columns:1fr}
+      .nav a.hide-sm{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div> UNIC O&amp;G Society</div>
+      <nav>
+        <a class="hide-sm" href="#about">About</a>
+        <a class="hide-sm" href="#activities">Activities</a>
+        <a class="hide-sm" href="#events">Events</a>
+        <a class="hide-sm" href="#team">Team</a>
+        <a class="cta" href="#join">Join us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Student‑run • Education • Research • Mentorship</span>
+          <h1>Obstetrics &amp; Gynaecology at UNIC</h1>
+          <p class="lead">We’re a student society creating opportunities to learn, research, and connect with mentors across Cyprus, Greece &amp; Switzerland. Come for seminars, hands‑on skills sessions, and real research pipelines.</p>
+          <div style="display:flex;gap:12px;margin-top:16px">
+            <a class="btn" href="#join">Become a member</a>
+            <a class="links" href="#events" style="align-items:center;border:1px solid rgba(255,255,255,.2);padding:10px 14px;border-radius:12px;text-decoration:none">See events</a>
+          </div>
+        </div></div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About the Society</h2>
+        <p>
+          Our mission is to make O&amp;G accessible and exciting for all students. We organise 
+          monthly talks with specialists, simulation workshops, and research sprints. 
+          Whether you’re exploring women’s health, surgery, oncology, or public health, 
+          there’s a place here for you.
+        </p>
+        <div class="grid cols-3" style="margin-top:20px">
+          <div class="card"><h3>Education</h3><p>Journal clubs, case‑based discussions, and exam‑focused tutorials led by residents and consultants.</p></div>
+          <div class="card"><h3>Research</h3><p>Small teams (3–4) for narrative reviews &amp; case reports with faculty mentorship and clear submission plans.</p></div>
+          <div class="card"><h3>Skills</h3><p>Ultrasound basics, suturing, laparoscopy fundamentals, and simulated obstetric emergencies.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="container">
+        <h2>Activities</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <span class="tag">Monthly</span>
+            <h3>Talks &amp; Panels</h3>
+            <p>From labour ward management to gynae‑onc innovations, featuring clinicians across CY–GR–CH.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Quarterly</span>
+            <h3>Research Sprints</h3>
+            <p>Form a team, pick a topic, get a supervisor, and draft a manuscript in 6–8 weeks.</p>
+          </div>
+          <div class="card">
+            <span class="tag">Hands‑on</span>
+            <h3>Skills Workshops</h3>
+            <p>Knots &amp; sutures, speculum exams, lap sim basics, and ultrasound scanning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <div class="events grid">
+          <!-- Duplicate/replace these items as needed -->
+          <div class="item">
+            <div class="date"><div class="d">12</div><div class="m">Nov</div></div>
+            <div>
+              <h3>Intro to Obstetric Ultrasound</h3>
+              <p class="muted">Hands‑on session • Simulation Lab • 17:30–19:30</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="date"><div class="d">27</div><div class="m">Nov</div></div>
+            <div>
+              <h3>Gynae Oncology Journal Club</h3>
+              <p class="muted">Hybrid (USZ / Zoom) • 18:00–19:00</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="date"><div class="d">10</div><div class="m">Dec</div></div>
+            <div>
+              <h3>Research Sprint Kick‑off</h3>
+              <p class="muted">Project matching &amp; supervisor briefing • 18:00–19:30</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2>Team</h2>
+        <div class="grid team">
+          <!-- Replace initials with photos if desired -->
+          <div class="card person"><div class="avatar">TT</div><div><strong>Thanos Thomopoulos</strong><br><span style="color:var(--muted)">President</span></div></div>
+          <div class="card person"><div class="avatar">IMA</div><div><strong>Isabella M. Angelopoulou</strong><br><span style="color:var(--muted)">Vice President</span></div></div>
+          <div class="card person"><div class="avatar">AT</div><div><strong>Academic Team</strong><br><span style="color:var(--muted)">Education Leads</span></div></div>
+          <div class="card person"><div class="avatar">RS</div><div><strong>Research Leads</strong><br><span style="color:var(--muted)">Projects &amp; Publications</span></div></div>
+          <div class="card person"><div class="avatar">Ta</div><div><strong>Tanadel Tarbouch</strong><br><span style="color:var(--muted)">Secretary</span></div></div>
+          <div class="card person"><div class="avatar">AB</div><div><strong>Alexandra Boboti</strong><br><span style="color:var(--muted)">Events Organizer</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="contact">
+      <div class="container">
+        <h2>Join us</h2>
+        <p>Membership is open to all students. Fill the form and we’ll get back to you with next steps.</p>
+        <form action="mailto:example@unicsociety.edu" method="post" enctype="text/plain">
+          <input required name="name" placeholder="Full name" />
+          <input required name="email" type="email" placeholder="Email" />
+          <textarea name="message" rows="4" placeholder="Why are you interested? (optional)"></textarea>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+        <p style="margin-top:10px;font-size:14px;color:var(--muted)">Prefer a link? Use our <a href="#" style="text-decoration:underline">Google Form</a> (replace this link).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="links" style="margin-bottom:12px">
+        <a href="#">Email</a>
+        <a href="#">Instagram</a>
+        <a href="#">GitHub</a>
+      </div>
+      <div style="font-size:13px">© <span id="year"></span> UNIC O&amp;G Society • Built by students</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
