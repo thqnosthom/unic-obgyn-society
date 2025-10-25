@@ -197,12 +197,7 @@
       <div class="container">
         <h2>Join us</h2>
         <p>Membership is open to all students. Fill the form and we’ll get back to you with next steps.</p>
-        <form action="mailto:example@unicsociety.edu" method="post" enctype="text/plain">
-          <input required name="name" placeholder="Full name" />
-          <input required name="email" type="email" placeholder="Email" />
-          <textarea name="message" rows="4" placeholder="Why are you interested? (optional)"></textarea>
-          <button class="btn" type="submit">Submit</button>
-        </form>
+        https://formspree.io/f/mblpjrwb
         <p style="margin-top:10px;font-size:14px;color:var(--muted)">Prefer a link? Use our <a href="#" style="text-decoration:underline">Google Form</a> (replace this link).</p>
       </div>
     </section>
@@ -222,5 +217,17 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+  (function () {
+    const q = new URLSearchParams(location.search);
+    if (q.get('sent') === '1') {
+      const box = document.createElement('div');
+      box.textContent = 'Thanks — your message was sent!';
+      box.style.cssText = 'margin:12px 0;padding:12px;border-radius:12px;background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.4)';
+      const join = document.querySelector('#join .container');
+      if (join) join.prepend(box);
+    }
+  })();
+</script>
 </body>
 </html>
