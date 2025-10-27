@@ -22,6 +22,13 @@
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
+    html {
+        scroll-behavior: smooth;   /* smooth “slide” for in-page links /
+        scroll-padding-top: 84px;  / keeps targets below the sticky header /
+    }
+    section {
+        scroll-margin-top: 84px;   / extra safety for hash targets */
+    }
     html,body{margin:0;height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(150deg,#0b1020 0%,#0f1733 60%,#0a0f24 100%);color:var(--text)}
     a{color:inherit}
     .container{max-width:1100px;margin:0 auto;padding:0 20px}
